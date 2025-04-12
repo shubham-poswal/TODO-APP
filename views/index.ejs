@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TODO App</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+    <!-- <form method="GET" action="/todos/new">
+        <button class="add-todo-btn">+ Add New Todo</button>
+      </form> -->
+      
+    <div class="container">
+        <aside class="sidebar">
+          <div class="logo">TODO</div>
+          <div class="todo-button">🗂️ TODO</div>
+      
+          <div class="todo-list">
+            <% todos.forEach(function(todo) { %>
+              <div class="todo-item">
+                <div class="todo-title"><%= todo.title %></div>
+                <div class="todo-description"><%= todo.description %></div>
+                <div class="todo-date"><%=todo.created_at.toString().split(" ")[4] %></div>
+                <div class="todo-date"><%=todo.created_at.toString().split(" ").slice(0, 4).join("-") %></div>
+
+                
+                <form method="GET" action="/todos/<%= todo._id %>/edit">
+                   <button class="btn edit-btn">edit</button>
+                </form>
+                <form action="/todos/<%= todo._id %>?_method=Delete" method="POST">
+                  <button class="btn delete-btn">Delete</button>
+                </form>
+              </div>
+            <% }) %>
+          </div>
+        </aside>
+      
+        <main class="main">
+          <!-- <h2>New Additions</h2>
+          <p>Select a todo to view its content here.</p> -->
+
+          <form method="GET" action="/todos/new">
+            <button class="add-todo-btn">+ New Additions</button>
+          </form>
+        </main>
+      </div>
+  <script src="/script.js"></script>      
+
+</body>
+</html>
+
+
